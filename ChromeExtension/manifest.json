@@ -1,0 +1,21 @@
+{
+  "name": "Help.me Chrome Extension",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Custom scraper build for Help.me",
+  "homepage_url": "https://sparxsandeep.000webhostapp.com/meeting.html",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Inject!"
+  },
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "tabs"
+  ]
+}
