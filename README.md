@@ -1,6 +1,8 @@
 ## help.me
 A native web-app that boosts productivity
 
+# Click on the following images to view demos.
+
 <a href="https://ibb.co/dZiRvw"><img src="https://preview.ibb.co/cdzzFw/2017_11_12_08_24_13.gif" alt="2017 11 12 08 24 13" border="0" /></a>
 
 
