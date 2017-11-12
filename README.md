@@ -1,9 +1,10 @@
 ## help.me
 A native web-app that boosts productivity
 
-<img src="https://ibb.co/dZiRvw" alt="Website demo gif 1"/>
-<img src="https://ibb.co/fHHrTG" alt="Website demo gif 2"/>
+<a href="https://ibb.co/dZiRvw"><img src="https://preview.ibb.co/cdzzFw/2017_11_12_08_24_13.gif" alt="2017 11 12 08 24 13" border="0" /></a>
 
+
+<a href="https://ibb.co/fHHrTG"><img src="https://preview.ibb.co/dUFOaw/2017_11_12_08_26_54.gif" alt="2017 11 12 08 26 54" border="0" /></a>
 
 ## Inspiration
 Inspired by researchers at Johns Hopkins university, the best way to stay focused is by managing time. However, in today's world, computers, smartphones, and tablets only increase the likelihood of accessing social media and other distracting websites. We wanted to create a solution that addresses this problem in a fun yet interactive way. Hence, **Help.me** was born. 
