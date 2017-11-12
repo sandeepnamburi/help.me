@@ -1,0 +1,271 @@
+
+<html>
+	<head>
+		<title>Casual Help.me</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/animate.css" />
+		<!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+
+		<!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Help.me</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Ipsum veroeros</a></li>
+							<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<p></br></p>
+
+							<h1 style="color: #9C6705">Casual Task</h1>
+
+							<h2 >Task Name:</h2>
+							<input type="text" name="demo-name" id="demo-name" value="" placeholder="Ex: Production Meeting with Cisco" />
+
+							<p></br></p>
+
+							<h2>Duration:</h2>
+							<select name="demo-category" id="demo-category">
+								<option value="">Click to select duration.</option>
+								<option value="15">15 minutes</option>
+								<option value="30">30 minutes</option>
+								<option value="45">45 minutes</option>
+								<option value="60">60 minutes</option>
+							</select>
+
+							<p></br></p>
+							<input type="submit" value="Start Task" class="special" class="tooltiptext" onclick="myFunction()" id="user_input" style="margin-right:19px;"/>
+							<input type="reset" value="Reset" onclick="newOnClick()" id="reset"/>
+
+							<p></br></p>
+							<style>
+
+								.tooltip {
+
+								position: relative;
+								display: inline-block;
+								border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+
+								}
+
+								.tooltip .tooltiptext {
+
+								visibility: hidden;
+								width: 120px;
+								background-color: black;
+								color: #fff;
+								text-align: center;
+								padding: 5px 0;
+								border-radius: 6px;
+
+								position: absolute;
+								z-index: 1;
+
+								}
+
+								.tooltip:hover .tooltiptext {
+
+								visibility: visible;
+
+								}
+
+							</style>
+
+							<h2 id="quitQuestionLabel"style="display:none">To stop the timer, type <span><i>YES</i></span>. </h2>
+							<input type="text" style="display:none"name="demo-name" id="quitQuestion" value="" placeholder="Ex: YES" />
+							<p><p>
+							<input type="submit" style="display:none" value="Submit" class="special" onclick="newOnClick()" id="submitQuestion" style="margin-right:19px;"/>
+
+							<script>
+
+							function myFunction()	{
+
+								var taskName = document.getElementById("demo-name").value
+								console.log(taskName);
+								display_message.innerHTML = taskName;
+								var taskDuration = document.getElementById("demo-category").value
+								console.log(taskDuration);
+								//display_duration.innerHTML= taskDuration;
+								document.getElementById("user_input").disabled = true;
+
+								if ((taskName === "") || (taskDuration <= 0))	{
+
+								}
+
+								else {
+										document.getElementById("pressed").style.visibility = "visible";
+										callStartTimer();
+
+								}
+
+							};
+
+							function callStartTimer()	{
+
+							document.getElementById('timer').innerHTML =
+								document.getElementById("demo-category").value + ":" + 00;
+									startTimer();
+
+							};
+
+
+							function startTimer() {
+
+								var taskName = document.getElementById("demo-name").value
+								console.log(taskName);
+								display_message.innerHTML= taskName;
+
+							  var presentTime = document.getElementById('timer').innerHTML;
+							  var timeArray = presentTime.split(/[:]+/);
+							  var m = timeArray[0];
+							  var s = checkSecond((timeArray[1] - 1));
+							  if(s==59){m=m-1}
+								if (m === 0)	{
+									alert('Timer completed.')
+									location.reload();
+								}
+							  document.getElementById('timer').innerHTML =
+							    m + ":" + s;
+							  setTimeout(startTimer, 1000);
+							}
+
+							function checkSecond(sec) {
+							  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+							  if (sec < 0) {sec = "59"};
+							  return sec;
+							}
+
+							var counter = 0;
+
+							function newOnClick() {
+
+								var counter = 0;
+
+								document.getElementById('quitQuestion').style.display = 'block';
+								document.getElementById('quitQuestionLabel').style.display = 'block';
+								document.getElementById('submitQuestion').style.display = 'block';
+								document.getElementById("pressed").style.visibility = "hidden";
+								document.getElementById("user_input").style.visibility = "hidden";
+								document.getElementById("reset").style.visibility = "hidden";
+
+								var questionResponse = document.getElementById("quitQuestion").value;
+
+								console.log("questionResponse: " + questionResponse);
+
+								if ((questionResponse === "yes") || (questionResponse === "YES") || (questionResponse === "ya") || (questionResponse === "yeah") || (questionResponse === "ye"))	{
+									location.reload();
+								}
+
+								else if (questionResponse === "0") {
+									document.getElementById("pressed").style.visibility = "visible";
+									document.getElementById("user_input").style.visibility = "visible";
+									document.getElementById("reset").style.visibility = "visible";
+									document.getElementById('quitQuestion').style.display = 'none';
+									document.getElementById('quitQuestionLabel').style.display = 'none';
+									document.getElementById('submitQuestion').style.display = 'none';
+
+								}
+								else {
+									alert("Type in \"YES\" to exit. Type \"0\" to return to the timer. Press \"OK\" to continue. ");
+								}
+
+							};
+
+							</script>
+
+
+							<h1 style="text-align:center;visibility:hidden;" class="animated infinite bounce" id="pressed">Your task <span style="color: #9C6705" id='display_message'></span> will end in <span style="color: #9C6705" id='timer'></span> minutes.</h1>
+
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="field half first">
+										<input type="text" name="name" id="name" placeholder="Name" />
+									</div>
+									<div class="field half">
+										<input type="email" name="email" id="email" placeholder="Email" />
+									</div>
+									<div class="field">
+										<textarea name="message" id="message" placeholder="Message"></textarea>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="special" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; 2017. All rights reserved</li><li>Design: <a href="http://sandeepnamburi.com">Sandeep Namburi</a></li> <li>Custom Tag: <span id="tagtag">casualtag</span></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
