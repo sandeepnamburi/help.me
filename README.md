@@ -8,6 +8,8 @@ A native web-app that boosts productivity
 
 <a href="https://ibb.co/fHHrTG"><img src="https://preview.ibb.co/dUFOaw/2017_11_12_08_26_54.gif" alt="2017 11 12 08 26 54" border="0" /></a>
 
+
+
 ## Inspiration
 Inspired by researchers at Johns Hopkins university, the best way to stay focused is by managing time. However, in today's world, computers, smartphones, and tablets only increase the likelihood of accessing social media and other distracting websites. We wanted to create a solution that addresses this problem in a fun yet interactive way. Hence, **Help.me** was born. 
 
@@ -22,3 +24,6 @@ We have a whole lot planned for the future of **Help.me**. **First**, as we grap
 
 ## Additional Nodes
 Keep in mind that the Chrome Extension is required for full functionality demonstrated in GIFs and presentation.
+
+## How to use
+Everything was coded with intentions of fully open-source software. Feel free to add to the functionality on the HTML elements and connect data with your own Chrome Extensions.
