@@ -1,5 +1,5 @@
 ## help.me
-A native web-app that boosts productivity
+A blended web-app and chrome extension that boosts productivity
 
 # Click on the following images to view demos.
 
