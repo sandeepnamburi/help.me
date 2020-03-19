@@ -1,5 +1,7 @@
 ## help.me
 A blended web-app and chrome extension that boosts productivity
+This project is currently in BETA. I will be releasing the compatible Chrome extension that tracks your productivity, blocks certain websites to prevent distractions, and provide analytics for everyday web browsing. You can view the finished website interface here: https://sandeepnamburi.github.io/help.me/
+
 
 # Click on the following images to view demos.
 
